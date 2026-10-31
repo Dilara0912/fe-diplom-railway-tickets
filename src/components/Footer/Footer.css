@@ -1,0 +1,183 @@
+.footer {
+  background: #2D2B2F;
+  color: #E5E5E5;
+  margin-top: 120px;
+}
+
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+  padding: 60px 0;
+}
+
+/* ===== Заголовки ===== */
+
+.footer__title {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.footer__title--social {
+  margin-top: 45px;
+  margin-bottom: 20px;
+}
+
+.footer__subtitle {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+/* ===== Контакты ===== */
+
+.footer__contacts {
+  width: 350px;
+}
+
+.footer__contact {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+
+  font-size: 24px;
+  font-weight: 400;
+  color: #E5E5E5;
+  line-height: 1.2;
+
+  margin-bottom: 22px;
+}
+
+.footer__icon {
+  flex-shrink: 0;
+  font-size: 30px;
+  margin-top: 3px;
+}
+
+/* ===== Подписка ===== */
+
+.footer__subscribe {
+  width: 650px;
+}
+
+.footer__form {
+  display: flex;
+  gap: 30px;
+}
+
+.footer__input {
+  width: 447px;
+  height: 60px;
+
+  border: none;
+  border-radius: 3px;
+
+  padding: 0 20px;
+
+  font-size: 24px;
+  color: #292929;
+  font-weight: 400;
+}
+
+.footer__input::placeholder {
+  color: #e5e5e5;
+}
+
+.footer__button {
+  width: 169px;
+  height: 60px;
+
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+  background: transparent;
+
+  color: #E5E5E5;
+  font-size: 24px;
+  cursor: pointer;
+  font-weight: 400;
+
+  transition: 0.3s;
+}
+
+.footer__button:hover {
+  background: #ffca62;
+  color: #2d2b38;
+  border-color: #ffca62;
+}
+
+/* ===== Соцсети ===== */
+
+.footer__social {
+  display: flex;
+  gap: 35px;
+}
+
+.footer__social-link {
+  color: #ffffff;
+  font-size: 30px;
+  color: #E5E5E5;
+  font-weight: 400;
+
+  transition: 0.3s;
+}
+
+.footer__social-link:hover {
+  color: #ffca62;
+}
+
+/* ===== Нижняя полоса ===== */
+
+.footer__bottom {
+  border-top: 1px solid #E5E5E5;
+}
+
+.footer__bottom-content {
+  height: 96px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===== Логотип ===== */
+
+.footer__logo {
+  font-size: 36px;
+  font-weight: 900;
+  color: #E5E5E5
+}
+
+/* ===== Стрелка ===== */
+
+.footer__scroll-top {
+  width: 36px;
+  height: 36px;
+
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+
+  background: transparent;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.3s;
+}
+
+.footer__scroll-top:hover {
+  background: #ffca62;
+  border-color: #ffca62;
+  color: #2d2b38;
+}
+
+/* ===== Копирайт ===== */
+
+.footer__copy {
+  font-size: 24px;
+  color: #e5e5e5;
+  font-weight: 400;
+}

@@ -1,0 +1,431 @@
+/* ========================================
+   ОБЩИЕ СТИЛИ ФОРМЫ
+   ======================================== */
+
+.search-form {
+  width: 729px;
+  height: 574px;
+  box-sizing: border-box;
+  padding: 60px 15px;
+  background: rgba(41, 41, 41, 0.8);
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.search-form__direction,
+.search-form__dates {
+  width: 100%;
+  min-width: 0;
+  flex: none;
+}
+
+.search-form__title {
+  margin: 0 0 30px;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+/* Поля в одной строке */
+.search-form__row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.search-form__direction .search-form__row {
+  display: grid;
+  grid-template-columns: 325px 24px 325px;
+  gap: 8px;
+  margin-bottom: 60px;
+}
+
+.search-form__direction .search-form__field {
+  width: 325px;
+  min-width: 0;
+}
+
+.search-form__dates .search-form__row {
+  display: grid;
+  grid-template-columns: repeat(2, 325px);
+  column-gap: 40px;
+  align-items: start;
+  width: max-content;
+  margin: 0;
+}
+
+.search-form__dates .search-form__title {
+  margin-bottom: 30px;
+}
+
+/* Поля занимают всю ширину своей колонки */
+.search-form__field {
+  width: 100%;
+  min-width: 0;
+  flex: initial;
+  box-sizing: border-box;
+}
+
+.search-form__input {
+  display: block;
+  width: 100%;
+  height: 60px;
+  box-sizing: border-box;
+  padding: 0 42px 0 16px;
+
+  border: none;
+  border-radius: 3px;
+  background: #fff;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+.search-form__input::placeholder {
+  color: #cfcfcf;
+  opacity: 1;
+}
+
+.search-form__field {
+  position: relative;
+}
+
+.search-form__icon {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 34px;
+  object-fit: contain;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Кнопка обмена направления */
+.search-form__swap {
+  display: flex;
+  flex: 0 0 24px;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #c4c4c4;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Кнопка поиска на главной */
+.search-form__submit {
+  display: block;
+  flex: 0 0 60px;
+  width: 325px;
+  height: 60px;
+  box-sizing: border-box;
+  align-self: flex-end;
+  margin: 40px 0 0;
+  padding: 0 12px;
+
+  border: none;
+  border-radius: 5px;
+  background: #ffa800;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.search-form__submit:hover {
+  background: #ffca62;
+}
+
+.search-form__submit:active {
+  background: #fff;
+}
+
+/* Корректная ширина календарных полей */
+.react-datepicker-wrapper,
+.react-datepicker__input-container {
+  display: block;
+  width: 100%;
+}
+
+/* ========================================
+   СТРАНИЦА ПОИСКА ПОЕЗДОВ
+   ======================================== */
+
+:is(.page--trains, .page--seats) .trains-page__search .search-form {
+  display: grid;
+  grid-template-columns: 690px 690px;
+  column-gap: 40px;
+  row-gap: 0;
+  align-content: start;
+  justify-content: center;
+
+  width: 100%;
+  height: 282px;
+  padding: 24px 40px;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+/* Левая колонка: два поля направления и стрелка */
+:is(.page--trains, .page--seats) .trains-page__search .search-form__direction {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+}
+
+:is(.page--trains, .page--seats) .trains-page__search .search-form__direction .search-form__title {
+  margin-bottom: 12px;
+  font-size: 26px;
+}
+
+:is(.page--trains, .page--seats) .trains-page__search .search-form__direction .search-form__row {
+  gap: 8px;
+  margin: 0;
+}
+
+:is(.page--trains, .page--seats) .trains-page__search .search-form__direction .search-form__field {
+  width: 325px;
+  flex: 0 0 325px;
+}
+
+/* Правая колонка: две даты */
+:is(.page--trains, .page--seats) .trains-page__search .search-form__dates {
+  display: flex;
+  flex-direction: column;
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+}
+
+:is(.page--trains, .page--seats) .trains-page__search .search-form__dates .search-form__title {
+  margin-bottom: 12px;
+  font-size: 26px;
+}
+
+:is(.page--trains, .page--seats) .trains-page__search .search-form__dates .search-form__field {
+  width: 325px;
+  flex: 0 0 325px;
+}
+
+/* Одинаковые размеры всех четырёх полей */
+:is(.page--trains, .page--seats) .trains-page__search .search-form__input {
+  width: 100%;
+  height: 60px;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+:is(.page--trains, .page--seats) .trains-page__search .react-datepicker-wrapper,
+:is(.page--trains, .page--seats) .trains-page__search .react-datepicker__input-container {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Кнопка строго под второй датой */
+:is(.page--trains, .page--seats) .trains-page__search .search-form__submit {
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: end;
+  align-self: start;
+
+  width: 325px;
+  height: 60px;
+  margin: 38px 0 0;
+  padding: 0 12px;
+  font-size: 24px;
+}
+
+/* На странице поездов плейсхолдер даты скрыт */
+:is(.page--trains, .page--seats) .search-form__dates .search-form__input::placeholder {
+  color: transparent;
+  opacity: 0;
+}
+
+/* ========================================
+   ВЫПАДАЮЩИЙ СПИСОК ГОРОДОВ
+   ======================================== */
+
+.search-form__city-field {
+  position: relative;
+  z-index: 20;
+}
+
+.search-form__city-list {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 100;
+
+  width: 100%;
+  max-height: 255px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  background: #f5f4f6;
+  border-radius: 3px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.search-form__city-list li {
+  margin: 0;
+  padding: 0;
+}
+
+.search-form__city-option {
+  display: block;
+  width: 100%;
+  min-height: 25px;
+  box-sizing: border-box;
+  padding: 3px 20px;
+
+  border: none;
+  background: transparent;
+  color: #292929;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 19px;
+  text-align: left;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.search-form__city-option:hover,
+.search-form__city-option:focus-visible {
+  background: #e5e5e5;
+  outline: none;
+}
+
+/* ========================================
+   АДАПТАЦИЯ ДЛЯ УЗКИХ ЭКРАНОВ
+   ======================================== */
+
+@media (max-width: 1450px) {
+  :is(.page--trains, .page--seats) .trains-page__search .search-form {
+    grid-template-columns: minmax(0, 1fr);
+    height: auto;
+    row-gap: 24px;
+  }
+
+  :is(.page--trains, .page--seats) .trains-page__search .search-form__direction,
+  :is(.page--trains, .page--seats) .trains-page__search .search-form__dates,
+  :is(.page--trains, .page--seats) .trains-page__search .search-form__submit {
+    grid-column: 1;
+  }
+
+  :is(.page--trains, .page--seats) .trains-page__search .search-form__direction {
+    grid-row: 1;
+  }
+
+  :is(.page--trains, .page--seats) .trains-page__search .search-form__dates {
+    grid-row: 2;
+  }
+
+  :is(.page--trains, .page--seats) .trains-page__search .search-form__submit {
+    grid-row: 3;
+    justify-self: end;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .search-form {
+    width: 100%;
+    height: auto;
+    padding: 24px;
+  }
+
+  .search-form__direction .search-form__row,
+  .search-form__dates .search-form__row {
+    gap: 8px;
+  }
+
+  .search-form__field {
+    width: auto;
+    flex: 1 1 0;
+  }
+
+  .search-form__submit {
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  :is(.page--trains, .page--seats) .trains-page__search .search-form {
+    padding: 24px;
+  }
+
+  :is(.page--trains, .page--seats) .trains-page__search .search-form__direction .search-form__field,
+  :is(.page--trains, .page--seats) .trains-page__search .search-form__dates .search-form__field {
+    width: auto;
+    flex: 1 1 0;
+  }
+
+  :is(.page--trains, .page--seats) .trains-page__search .search-form__submit {
+    width: 100%;
+  }
+}
+
+.search-form__dates .search-form__field {
+  position: relative;
+  width: 325px;
+  min-width: 0;
+}
+
+.search-form__dates .react-datepicker-wrapper,
+.search-form__dates .react-datepicker__input-container {
+  display: block;
+  width: 100%;
+}
+
+.search-form__swap {
+  display: flex;
+  flex: 0 0 24px;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.search-form__swap img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  opacity: 0.6;
+}
+
+.search-form__field {
+  position: relative;
+}
+
+.search-form__field .react-datepicker-popper {
+  z-index: 100 !important;
+}
+
+.search-form__city-field svg.search-form__icon {
+  width: 20.87px;
+  height: 30px;
+  color: #E5E5E5;
+  opacity: 1;
+}

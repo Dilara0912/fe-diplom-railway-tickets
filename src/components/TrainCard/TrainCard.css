@@ -1,0 +1,493 @@
+.train-card {
+  display: grid;
+  grid-template-columns: 197px minmax(0, 1fr) 283px;
+  width: 959px;
+  height: 354px;
+  margin-bottom: 40px;
+  background: #fff;
+  border: 1px solid #c4c4c4;
+  box-shadow: 0 2px 2px rgb(0 0 0 / 30%);
+  color: #292929;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.train-card>* {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.train-card:hover {
+  border-color: #ffa800;
+}
+
+/* Левая колонка */
+.train-card__info {
+  min-width: 0;
+  padding: 58px 16px 16px;
+  background: #e4e0e9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.train-card__icon {
+  width: 86px;
+  height: 86px;
+  flex-shrink: 0;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin-bottom: 17px;
+  box-sizing: border-box;
+}
+
+.train-card__icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.train-card__info h3 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 100%;
+  margin: 0 0 24px;
+}
+
+.train-card__route {
+  width: 153px;
+  height: 58px;
+  margin: 17px 18px 0 26px;
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  color: #292929;
+}
+
+.train-card__route-origin {
+  color: #928f94;
+}
+
+/* Центральная колонка — расписание */
+.train-card__schedule {
+  min-width: 0;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-evenly;
+  gap: 20px;
+  border-right: 1px dashed #e5e5e5;
+  box-sizing: border-box;
+}
+
+.train-card__trip {
+  display: grid;
+  grid-template-columns: 155px 47px 39px 164px;
+  column-gap: 0;
+  align-items: start;
+  width: 405px;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.train-card__station {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.train-card__station strong {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 100%;
+  color: #000;
+}
+
+/* Название города */
+.train-card__station span {
+  display: block;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 100%;
+  color: #000000;
+}
+
+/* Название конкретного вокзала */
+.train-card__station small {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  color: #928F99;
+}
+
+.train-card__duration {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+}
+
+.train-card__duration span {
+  display: block;
+  width: 47px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  color: #C4C4C4;
+  white-space: nowrap;
+}
+
+.train-card__duration img {
+  display: block;
+  width: 30px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.train-card__duration--return img {
+  transform: rotate(180deg);
+}
+
+
+/* Правая колонка */
+.train-card__prices {
+  position: relative;
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Строки с типами мест */
+.train-card__price-row {
+  position: absolute;
+  left: 27px;
+  right: 22px;
+  height: 28px;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.train-card__price-row--1 {
+  top: 37px;
+}
+
+.train-card__price-row--2 {
+  top: 90px;
+}
+
+.train-card__price-row--3 {
+  top: 143px;
+}
+
+.train-card__price-row--4 {
+  top: 196px;
+}
+
+/* Названия типов мест */
+.train-card__price-type {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  color: #3e3c41;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+/* Количество мест */
+.train-card__count {
+  position: absolute;
+  top: 4px;
+  left: 91px;
+  width: 22px;
+  height: 20px;
+  color: #ffa800;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
+}
+
+/* Цена: «от», сумма и рубль */
+.train-card__price {
+  position: absolute;
+  top: 0;
+  left: 128px;
+  display: flex;
+  align-items: center;
+  width: 107px;
+  height: 28px;
+  white-space: nowrap;
+}
+
+.train-card__price small {
+  flex: 0 0 22px;
+  width: 22px;
+  height: 20px;
+  margin-right: 2px;
+  color: #928f94;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.train-card__amount {
+  display: inline-block;
+  flex: 0 0 74px;
+  width: 74px;
+  color: #2d2b2f;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  white-space: nowrap;
+}
+
+.train-card__currency {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 19px;
+  margin-left: -7px;
+  color: #928f94;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 19px;
+}
+
+/* Выпадающий блок верхних и нижних мест */
+.train-card__coupe-popup {
+  position: absolute;
+  z-index: 5;
+  top: 174px;
+  left: 3px;
+  width: 276px;
+  height: 93px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background: #f5f4f6;
+  box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+}
+
+.train-card__coupe-popup::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 126px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #f5f4f6;
+  transform: translateX(-50%);
+}
+
+.train-card__seat-option {
+  position: absolute;
+  top: 17px;
+  left: 0;
+  width: 100%;
+  height: 18px;
+}
+
+.train-card__seat-option--lower {
+  top: 54px;
+}
+
+.train-card__seat-label {
+  position: absolute;
+  left: 32px;
+  width: 148px;
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.train-card__seat-count {
+  position: absolute;
+  left: 115px;
+  width: 22px;
+  color: #ffa800;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: center;
+}
+
+.train-card__seat-price {
+  position: absolute;
+  left: 175px;
+  top: -5px;
+  display: flex;
+  align-items: center;
+  height: 28px;
+}
+
+/* services - иконки */
+.train-card__services {
+  position: absolute;
+  right: 29px;
+  bottom: 80px;
+  display: block;
+  width: 92px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* Кнопка */
+.train-card__button {
+  position: absolute;
+  left: 34px;
+  bottom: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 228px;
+  height: 39px;
+  box-sizing: border-box;
+  padding: 0;
+  border: none;
+  border-radius: 5px;
+  background: #ffa800;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 100%;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.train-card__button:hover {
+  background: #e99500;
+}
+
+.train-card__button:active {
+  background: #cc8000;
+}
+
+/* Адаптация */
+
+@media (max-width: 1000px) {
+  .train-card {
+    width: 100%;
+    grid-template-columns: 150px minmax(0, 1fr);
+  }
+
+  .train-card__prices {
+    grid-column: 1 / -1;
+    border-top: 1px solid #e5e5e5;
+  }
+}
+
+@media (max-width: 600px) {
+  .train-card {
+    grid-template-columns: 1fr;
+  }
+
+  .train-card__info {
+    padding: 20px;
+  }
+
+  .train-card__schedule {
+    padding: 20px 12px;
+  }
+
+  .train-card__trip {
+    grid-template-columns: minmax(0, 1fr) 36px minmax(0, 1fr);
+    gap: 5px;
+  }
+
+  .train-card__station strong {
+    font-size: 18px;
+  }
+
+  .train-card__station span {
+    font-size: 15px;
+  }
+
+  .train-card__station small {
+    font-size: 12px;
+  }
+
+  .train-card__price {
+    font-size: 18px;
+  }
+
+  .train-card__button {
+    font-size: 18px;
+  }
+
+  .train-card__trip-spacer {
+    display: none;
+  }
+}
+
+/* Компактная карточка 020У «Мегаполис» */
+.train-card--compact {
+  height: 268px;
+  min-height: 268px;
+  grid-template-rows: minmax(0, 1fr);
+  overflow: hidden;
+}
+
+/* Не позволяем содержимому растягивать карточку */
+.train-card--compact>* {
+  min-height: 0;
+}
+
+/* Левая колонка — содержимое в пределах карточки */
+.train-card--compact .train-card__info {
+  min-height: 0;
+  padding: 34px 18px 16px 26px;
+  overflow: hidden;
+}
+
+/* Убираем лишние отступы, из-за которых маршрут вылезает */
+.train-card--compact .train-card__route {
+  width: 153px;
+  max-width: 100%;
+  height: 58px;
+  margin: 0;
+  box-sizing: border-box;
+  align-self: flex-start;
+}
+
+/* Расписание прижимаем вверх, как в макете */
+.train-card--compact .train-card__schedule {
+  min-height: 0;
+  height: 100%;
+  padding: 48px 24px 0;
+  justify-content: flex-start;
+  gap: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* В компактной карточке только одно направление */
+.train-card--compact .train-card__trip--return {
+  display: none;
+}

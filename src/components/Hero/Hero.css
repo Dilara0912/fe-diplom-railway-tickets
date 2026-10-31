@@ -1,0 +1,50 @@
+.hero {
+    height: 985px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero__overlay {
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.hero__content {
+    width: 1200px;
+    height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end;
+    gap: 120px;
+}
+
+.hero__text {
+    width: 506px;
+
+    color: white;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 72px;
+    line-height: 72px;
+
+    margin-bottom: 220px;
+}
+
+.hero__text span {
+    display: block;
+    font-weight: 100;
+}
+
+.hero__text strong {
+    display: block;
+    font-weight: 700;
+}
+
+.hero--trains {
+    height: 405px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

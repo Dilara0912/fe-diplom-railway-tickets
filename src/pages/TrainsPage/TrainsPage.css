@@ -1,0 +1,133 @@
+.trains-page {
+  position: relative;
+  left: auto;
+  transform: none;
+
+  display: grid;
+  grid-template-columns: 379px 959px;
+  column-gap: 68px;
+  align-items: start;
+
+  width: 1406px;
+  max-width: none;
+  margin-left: calc((100vw - 1406px) / 2);
+  margin-right: 0;
+
+  box-sizing: border-box;
+}
+
+.trains-page__sidebar {
+  width: 379px;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.trains-page__content {
+  width: 959px;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.trains-page__banner {
+  min-height: 596px;
+  padding-top: 314px;
+  box-sizing: border-box;
+
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url('../../assets/images/station-bg.png');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.trains-page__search {
+  width: min(1500px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  background: rgba(41, 41, 41, 0.85);
+}
+
+/* Боковая панель и результаты — в одном потоке */
+.page--trains .trains-page {
+  display: flex;
+  align-items: flex-start;
+  gap: 44px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Боковая панель не сжимается */
+.page--trains .trains-page__sidebar {
+  flex: 0 0 379px;
+  width: 379px;
+  min-width: 379px;
+  box-sizing: border-box;
+}
+
+/* Результаты занимают только оставшееся место */
+.page--trains .trains-page__content {
+  flex: 1 1 0;
+  min-width: 0;
+  width: auto;
+  box-sizing: border-box;
+}
+
+/* Карточки не должны расширять колонку результатов */
+.page--trains .trains-page__content>* {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Единый контейнер страницы поиска */
+.page--trains .trains-page {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: grid;
+  grid-template-columns: 379px 959px;
+  column-gap: 68px;
+  align-items: start;
+
+  width: 1406px;
+  max-width: none;
+  margin: 120px 0 40px;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+/* Левая колонка — фильтры */
+.page--trains .trains-page__sidebar {
+  grid-column: 1;
+  width: 379px;
+  min-width: 379px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Правая колонка — результаты */
+.page--trains .trains-page__content {
+  grid-column: 2;
+  width: 959px;
+  min-width: 959px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Шапка результатов и список поездов */
+.page--trains .trains-page__content>.results-header {
+  width: 959px;
+  min-width: 959px;
+  box-sizing: border-box;
+}
+
+.page--trains .trains-page__content>.trains-list {
+  width: 959px;
+  min-width: 959px;
+  box-sizing: border-box;
+}

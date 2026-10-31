@@ -1,0 +1,145 @@
+
+.booking-steps {
+  width: 100%;
+  height: 98px;
+  background: #3e3c41;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+.booking-steps__container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+}
+
+.booking-steps__item {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 24px;
+  background: #3e3c41;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+  box-sizing: border-box;
+}
+
+/* Первый шаг шире остальных, как в Figma */
+.booking-steps__item:first-child {
+  flex-grow: 1.55;
+}
+
+/* Внешний контур стрелки */
+.booking-steps__item:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -38px;
+  width: 38px;
+  height: 100%;
+
+  background: #e5e5e5;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Внутренняя заливка стрелки */
+.booking-steps__item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  right: -37px;
+  width: 37px;
+  height: calc(100% - 2px);
+
+  background: #3e3c41;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Заливка стрелки активного шага */
+.booking-steps__item--active:not(:last-child)::after {
+  background: #ffa800;
+}
+
+/* Активный шаг */
+.booking-steps__item--active {
+  background: #ffa800;
+}
+
+.booking-steps__item--active::after {
+  border-left-color: #ffa800;
+}
+
+/* Номер шага */
+
+.booking-steps__number {
+  flex: 0 0 56px;
+  width: 56px;
+  height: 56px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 3px solid #fff;
+  border-radius: 50%;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  padding: 0;
+}
+
+.booking-steps__text {
+  white-space: nowrap;
+  line-height: 100%;
+}
+
+/* Адаптация для небольших экранов */
+@media (max-width: 700px) {
+  .booking-steps {
+    height: 64px;
+  }
+
+  .booking-steps__item {
+    gap: 6px;
+    padding: 0 5px;
+    font-size: 12px;
+  }
+
+  .booking-steps__item:not(:last-child)::after {
+    right: -12px;
+    border-top-width: 32px;
+    border-bottom-width: 32px;
+    border-left-width: 12px;
+  }
+
+  .booking-steps__item:not(:last-child)::before {
+    right: -13px;
+    border-top-width: 33px;
+    border-bottom-width: 33px;
+    border-left-width: 13px;
+  }
+
+  .booking-steps__number {
+    flex-basis: 25px;
+    width: 25px;
+    height: 25px;
+    font-size: 15px;
+    border-width: 1px;
+  }
+}

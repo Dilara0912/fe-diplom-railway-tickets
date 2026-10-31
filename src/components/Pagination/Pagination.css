@@ -1,0 +1,129 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 36px;
+
+  width: 564px;
+  height: 75px;
+  max-width: 100%;
+
+  margin: 64px 0 0 auto;
+  box-sizing: border-box;
+}
+
+/* Все пять кнопок */
+.pagination button {
+  display: flex;
+  flex: 0 0 84px;
+  align-items: center;
+  justify-content: center;
+
+  width: 84px;
+  height: 75px;
+  padding: 0;
+  box-sizing: border-box;
+
+  border: 2px solid #c9c7ca;
+  border-radius: 5px;
+  background: transparent;
+  color: #928f94;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+}
+
+/* Кнопки со стрелками */
+.pagination .pagination__arrow {
+  display: flex;
+  flex: 0 0 84px;
+  align-items: center;
+  justify-content: center;
+
+  width: 84px;
+  height: 75px;
+  padding: 0;
+
+  font-size: 0;
+}
+
+.pagination .pagination__arrow::before {
+  content: '';
+  display: block;
+  width: 18px;
+  height: 29px;
+  flex-shrink: 0;
+
+  background: currentColor;
+  clip-path: polygon(12px 0,
+      18px 0,
+      6px 14.5px,
+      18px 29px,
+      12px 29px,
+      0 14.5px);
+}
+
+/* Правая стрелка — зеркальное отражение левой */
+.pagination .pagination__arrow[aria-label="Следующая страница"]::before {
+  transform: scaleX(-1);
+}
+
+/* Активная страница */
+.pagination .pagination__button--active {
+  background: #ffa800;
+  border-color: #ffa800;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Наведение */
+.pagination button:not(:disabled):hover {
+  border-color: #ffa800;
+  color: #ffa800;
+}
+
+.pagination .pagination__button--active:hover {
+  background: #e99500;
+  border-color: #e99500;
+  color: #fff;
+}
+
+/* Неактивные стрелки */
+.pagination button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* Размещение под карточками на странице поездов */
+.page--trains .trains-page__content .pagination {
+  width: 564px;
+  height: 75px;
+  max-width: 100%;
+  margin: 64px 0 0 auto;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .pagination {
+    gap: 8px;
+    height: auto;
+  }
+
+  .pagination button {
+    flex: 1 1 0;
+    width: auto;
+    height: 52px;
+    font-size: 18px;
+  }
+
+  .pagination .pagination__arrow {
+    font-size: 28px;
+  }
+}

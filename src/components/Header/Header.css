@@ -1,0 +1,58 @@
+/* Общие стили шапки — главная страница */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+/* Верхняя полоса с логотипом */
+.header__top {
+  width: 100%;
+  height: 64px;
+  box-sizing: border-box;
+  margin: 0;
+  padding-left: max(20px, calc((100% - 1404px) / 2));
+
+  display: flex;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.header__logo {
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1;
+  color: #E5E5E5;
+}
+
+/* Панель навигации */
+.header__nav {
+  height: 94px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  gap: 83px;
+
+  padding-left: max(20px, calc((100% - 1404px) / 2));
+
+  background: #292929;
+}
+
+.header__nav a {
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 43px;
+
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.header__nav a:hover {
+  color: #FFA800;
+}

@@ -1,0 +1,166 @@
+/* Весь блок */
+.last-tickets {
+  width: 379px;
+  min-width: 379px;
+  margin-top: 42px;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Заголовок */
+.last-tickets__title {
+  width: 378px;
+  height: 39px;
+  margin: 0 0 26px;
+  color: #000;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.2;
+  box-sizing: border-box;
+}
+
+/* Список карточек */
+.last-tickets__list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 17px;
+}
+
+/* Карточка */
+.last-ticket {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 161px;
+  width: 360px;
+  min-width: 360px;
+  height: 161px;
+  box-sizing: border-box;
+  padding: 18px 16px 14px 18px;
+  background: #fff;
+  border: 1px solid #c4c4c4;
+  box-shadow: 0 2px 3px rgb(0 0 0 / 15%);
+}
+
+.last-ticket__route {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.last-ticket__route>div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.last-ticket__route span {
+  color: #292929;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.last-ticket__origin small {
+  display: block;
+  width: 105px;
+  max-width: 105px;
+  color: #928f94;
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.last-ticket__destination {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.last-ticket__destination small {
+  display: block;
+  width: 160px;
+  max-width: 160px;
+  color: #928f94;
+  font-size: 16px;
+  line-height: 1.35;
+  text-align: right;
+}
+
+.last-ticket__bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 0;
+  min-height: 35px;
+  flex-shrink: 0;
+}
+
+.last-ticket__icons {
+  display: flex;
+  align-items: center;
+  width: 92px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.last-ticket__icons img {
+  display: block;
+  width: 92px;
+  height: 20px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* Цена */
+.last-ticket__price {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  margin: 0;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.last-ticket__from {
+  color: #928f94;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.last-ticket__price strong {
+  color: #FFA800;
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 35px;
+}
+
+.last-ticket__rub {
+  color: #928f94;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+@media (max-width: 1200px) {
+  .last-tickets__title {
+    font-size: 28px;
+  }
+
+  .last-ticket {
+    padding: 16px;
+  }
+
+  .last-ticket__route small {
+    display: block;
+    width: 105px;
+    color: #928f94;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.35;
+  }
+}

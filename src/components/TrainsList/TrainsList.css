@@ -1,0 +1,11 @@
+.trains-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  min-width: 0;
+}
+
+.trains-list > * {
+  min-width: 0;
+}
